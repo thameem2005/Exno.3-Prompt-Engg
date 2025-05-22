@@ -1,133 +1,125 @@
-## Experiment No. 3
-## Title: Scenario-Based Report Development Utilizing Diverse Prompting Techniques
-________________________________________
+## Ex. No. 3 – Scenario-Based Report Development Utilizing Diverse Prompting Techniques
+
 ## Aim:
 
-To design an AI-powered chatbot that assists customers in resolving issues related to product troubleshooting, order tracking, and general inquiries. The chatbot must be capable of efficiently handling various customer queries while maintaining a user-friendly and conversational tone. This experiment employs a range of prompting patterns to guide the development and training of the chatbot—from simple, task-specific prompts to more sophisticated persona-driven interactions.
-________________________________________
-## Requirements:
+To design and evaluate an AI-powered conversational chatbot that efficiently assists customers with issues related to product troubleshooting, order tracking, and general inquiries. The chatbot must maintain a friendly, approachable tone while offering accurate, context-aware assistance. The objective of this experiment is to explore and implement a range of prompt engineering techniques to optimize chatbot behavior across different user scenarios and interaction complexities.
 
-•	GPT-based AI platform (such as OpenAI’s GPT models)
-•	Scenario-based datasets for chatbot interactions
-•	Prompt templates using various prompting techniques
-•	Evaluation framework to assess chatbot performance
-________________________________________
-## Theory:
+## Algorithm & Prompting Techniques:
 
-Prompting techniques are strategies used to elicit specific responses from language models like GPT. These prompts act as inputs to guide the behavior and language of the model, helping it generate more accurate, relevant, or engaging outputs. By applying structured prompting methods, developers can customize the chatbot’s responses across different contexts and user needs.
-![image](https://github.com/user-attachments/assets/88098618-b817-4620-b788-415facab6d7c)
+Each prompting technique is designed to demonstrate a distinct strategy for guiding the AI’s response behavior. The chatbot is tested using different prompting formats to determine the most effective approach for real-world applications.
 
-
-Prompting techniques explored in this experiment include:
-1.	Direct Instruction Prompts
-2.	Contextual Prompting
-3.	Persona-Based Prompting
-4.	Few-Shot Prompting
-5.	Chain-of-Thought Prompting
-6.	Instruction with Constraints
-7.	Reflective Prompting
-Each technique contributes to making the chatbot more effective, context-aware, and human-like in communication.
- 
-________________________________________
-
-
-
-## Algorithm & Procedure:
 ## 1. Direct Instruction Prompts
+Objective:
+Use concise, specific prompts that instruct the chatbot exactly what to say in response to predictable customer queries.
 
-Objective: Enable the chatbot to deliver concise, direct answers.
-Description: The model is given specific phrasing to use in its responses.
-Prompt Pattern Example:
-“When a customer asks for the status of their order, reply with: ‘Your order is currently being processed and will be delivered by [date].’”
-Use Case: Suitable for frequently asked questions or straightforward service updates.
-________________________________________
+Prompt Pattern:
+
+Prompt:
+"When a customer asks for the status of their order, reply with: 'Your order is currently being processed and will be delivered by [date].'"
+
+Use Case:
+Minimizes ambiguity in high-frequency scenarios such as order status checks. Suitable for scenarios where exact phrasing and consistency are important.
+
 ## 2. Contextual Prompting
+Objective:
+Enable the chatbot to use prior conversational context to tailor responses more effectively, improving continuity and relevance.
 
-Objective: Enable the chatbot to use previous user inputs to formulate relevant responses.
-Description: The chatbot considers earlier conversation history for better personalization.
-Prompt Pattern Example:
-“If the customer previously mentioned they haven’t received their order, say: ‘I see that you mentioned your order hasn't arrived yet. Let me check the details for you and get back shortly.’”
-Use Case: Useful in multi-turn conversations or complaint tracking.
-________________________________________
+Prompt Pattern:
+
+Prompt:
+"If the customer previously mentioned that they haven’t received their order, say, 'I see that you mentioned your order hasn't arrived yet. Let me check the details for you and get back shortly.'"
+
+Use Case:
+Useful in multi-turn conversations to show memory, attentiveness, and empathy. Enhances user trust and satisfaction.
+
 ## 3. Persona-Based Prompting
+Objective:
+Develop chatbot responses with a specific personality, tone, or emotional style to humanize interaction and increase engagement.
 
-Objective: Make chatbot communication more engaging by giving it a human-like persona.
-Description: The model is instructed to take on the role of a friendly support agent.
-Prompt Pattern Example:
-“Pretend you are a friendly, helpful customer service representative. Use a conversational tone, such as: ‘Hey there! I’m here to help with any questions you might have. Let’s get your issue sorted!’”
-Use Case: Enhances user experience and builds rapport with users.
-________________________________________
+Prompt Pattern:
+
+Prompt:
+"Pretend you are a friendly, helpful customer service representative. Use a conversational tone, such as 'Hey there! I’m here to help with any questions you might have. Let’s get your issue sorted!'"
+
+Use Case:
+Boosts brand personality and improves user experience by aligning chatbot tone with organizational values (e.g., casual, professional, empathetic).
+
 ## 4. Few-Shot Prompting
+Objective:
+Provide the AI with a few examples of how to respond to similar user inputs. Helps it generalize to new but related queries.
 
-Objective: Teach the model to generalize responses using a few example inputs and outputs.
-Description: Multiple examples are provided to help the model infer patterns.
-Prompt Pattern Example:
-“My phone isn’t charging.” → “Have you tried using a different cable?”
-“The screen is flickering.” → “Try restarting the device.”
-Now respond to: “My app keeps crashing.”
-Expected Output: “Try reinstalling the app. If the issue continues, check for updates or contact support.”
-Use Case: Ideal for technical support and diagnostics.
-________________________________________
+Prompt Pattern:
 
+Prompt:
+"Here are some examples of how to handle technical questions:
+'My phone isn't charging.' → 'Have you tried using a different cable? If that doesn’t work, it may be an issue with the port.'
+'The screen is flickering.' → 'It sounds like a display issue. Have you tried restarting the device?'
+Now, respond to: 'My app keeps crashing.'"
 
-## 5. Chain-of-Thought Prompting
+Use Case:
+Effective when handling open-ended or less predictable queries. Mimics few-shot learning by pattern recognition from examples.
 
-Objective: Use logical, step-by-step reasoning for complex problems.
-Description: Break down responses into steps to ensure clarity and correctness.
-Prompt Pattern Example:
-“When a customer reports their laptop overheating:
-•	Ask if they’re using it on a soft surface.
-•	Suggest using a hard surface for better ventilation.
-•	Ask if the vents are clean.
-•	Recommend restarting.
-Now solve: ‘My laptop fan is making a loud noise.’”
-Expected Output: “Is your laptop on a soft surface like a bed or pillow? That can restrict airflow. Try moving it to a flat, hard surface. Also, dust buildup in the fan vents can cause noise—cleaning them might help. Restarting may also reset fan speed.”
-Use Case: Suitable for detailed troubleshooting scenarios.
-________________________________________
+## 5. Chain of Thought Prompting
+Objective:
+Guide the chatbot to reason through complex or technical issues using a logical step-by-step approach, leading to clearer resolutions.
+
+Prompt Pattern:
+
+Prompt:
+*"When a customer reports their laptop overheating, guide them through the following steps:
+
+Ask if they are using the laptop on a soft surface.
+
+Suggest moving the laptop to a flat, hard surface for better airflow.
+
+Ask if they’ve cleaned the vents recently.
+
+Recommend restarting the device to see if the issue persists.
+Now, solve: 'My laptop fan is making a loud noise.'"*
+
+Use Case:
+Ideal for troubleshooting workflows that require sequential diagnostics or decision-making logic.
+
 ## 6. Instruction with Constraints
+Objective:
+Instruct the chatbot to provide a helpful answer while meeting specific constraints like response length, tone, or vocabulary.
 
-Objective: Guide the model to follow rules regarding length, tone, or content.
-Description: Constraints are embedded in the prompt to control output style.
-Prompt Pattern Example:
-“Respond to order inquiries in no more than 50 words and avoid using technical jargon. Example: ‘Your order is on the way and should arrive by [date]. Feel free to reach out if you need anything else.’”
-Use Case: Ideal for SMS replies or app-based customer chat where brevity is important.
-________________________________________
+Prompt Pattern:
 
-## 7.Reflective Prompting
+Prompt:
+"Respond to order inquiries in no more than 50 words and avoid using technical jargon.
+Example: 'Your order is on the way and should arrive by [date]. Feel free to reach out if you need anything else.'"
 
-Objective: Reduce misunderstandings by confirming the user’s query before answering.
-Description: The chatbot first repeats the user’s request to clarify.
-Prompt Pattern Example:
-“When a customer asks for help, first reflect their question back. For example: ‘You’re asking how to reset your password, correct? Here’s how you can do it…’”
-Use Case: Useful in sensitive or technical issues where confirmation is important.
-________________________________________
+Use Case:
+Improves readability and accessibility, especially on mobile or when speaking with non-technical users. Enforces brand communication standards.
 
+## 7. Reflective Prompting
+Objective:
+Ensure the chatbot reflects the user's input before answering, validating understanding and reducing communication errors.
 
+Prompt Pattern:
 
-## Results:
+Prompt:
+"When a customer asks for help, first reflect their question back to them.
+For example, if they ask 'How can I reset my password?' respond with: 'You're asking how to reset your password, correct? Here’s how you can do it…'"
 
-Each prompting strategy was tested with relevant sample queries. The chatbot responses were evaluated based on accuracy, tone, relevance, and user engagement.
-Prompting Type	Clarity	Contextual Accuracy	Engagement	Use Case Efficiency
-Direct Instruction	High	Moderate	Low	High
-Contextual Prompting	High	High	Moderate	High
-Persona-Based Prompting	Moderate	Moderate	High	High
-Few-Shot Prompting	High	High	Moderate	High
-Chain-of-Thought	High	High	Moderate	High
-Instruction with Constraints	High	Moderate	Moderate	High
-Reflective Prompting	High	High	Moderate	High
-All prompting techniques functioned successfully, producing contextually relevant, appropriately toned, and structured responses in alignment with the experiment’s objective.
-________________________________________
+Use Case:
+Improves mutual understanding and reduces errors in high-risk situations like account recovery or financial inquiries.
+
+## Result:
+All seven prompting strategies were tested successfully using a simulated AI-powered chatbot prototype. The chatbot responded appropriately to different types of customer queries, adapting its tone, structure, and detail level according to the prompting method employed. Notably:
+
+Direct instruction worked best for transactional tasks (e.g., order tracking).
+
+Persona-driven and contextual prompting significantly improved user satisfaction and natural flow.
+
+Chain of thought and few-shot prompting demonstrated strong performance in complex troubleshooting cases.
+
+Instruction with constraints ensured brevity and simplicity, essential for quick service.
+
+Reflective prompting proved effective in building trust and reducing user confusion.
+
 ## Conclusion:
+This scenario-based experiment highlights the importance of diverse prompt engineering techniques in designing intelligent, adaptable, and user-centric AI chatbots. By strategically employing varied prompt patterns—ranging from rule-based templates to flexible persona-driven dialogues—we can create conversational agents that not only solve problems but do so in ways that feel intuitive, personal, and engaging.
 
-The experiment demonstrated the effectiveness of scenario-based prompt engineering in designing intelligent, context-aware customer service chatbots. Each prompting style contributes uniquely:
-•	Direct instruction ensures standardization.
-•	Contextual prompting provides personalization.
-•	Persona-based prompting increases engagement.
-•	Few-shot and chain-of-thought techniques help handle complex queries.
-•	Constraints and reflective prompting enforce clarity and conciseness.
-By integrating these techniques, a highly functional and human-like chatbot can be developed, capable of serving in various customer service environments effectively.
-________________________________________
-## Final Result:
-  
-Thus, the various prompting techniques were successfully implemented and executed, resulting in an AI-powered chatbot that performs effectively across diverse customer interaction scenarios.
-
+Future iterations can combine these strategies dynamically within a single conversation to further enhance the chatbot’s contextual adaptability and emotional intelligence.
